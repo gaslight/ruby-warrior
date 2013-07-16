@@ -1,9 +1,15 @@
 class Actions::Shoot < Action
   def match?
-    warrior.sense_wizard?
+    @backward = warrior.sense_enemy?(:backward)
+    @forward = warrior.sense_enemy?(:forward)
+    @backward || @forward
   end
 
   def execute
-    warrior.shoot!
+    if @backward
+      warrior.shoot!(:backward)
+    elsif @forward
+      warrior.shoot!(:forward)
+    end
   end
 end

@@ -8,7 +8,7 @@ end
 
 module Actions
   def actions(warrior)
-    [Rest, Pivot, Backup, RescueCaptive, Shoot, Explore, Attack, NoAction].map do |klass|
+    [Rest, Pivot, Shoot, Backup, RescueCaptive, Explore, Attack, NoAction].map do |klass|
       klass.new(warrior)
     end
   end

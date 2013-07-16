@@ -22,12 +22,13 @@ class MindfulWarrior
       (warrior.feel(:backward).empty? || warrior.feel(:forward).empty?)
   end
 
-  def sense_wizard?
-    puts warrior.look.inspect
-    warrior.look.each do |see|
+  def sense_enemy?(direction = :forward)
+    puts warrior.look(direction).inspect
+    warrior.look(direction).each do |see|
       next if see.to_s == "nothing"
+      next if see.to_s == "wall"
       return false if see.to_s == "Captive"
-      return true if see.to_s == "Wizard"
+      return true if see.to_s != "Captive"
     end
     false
   end
