@@ -1,4 +1,4 @@
-class Actions::Pivot < Action
+class Actions::Pivot < Actions::Base
   def match?
     warrior.feel.wall?
   end

@@ -1,4 +1,4 @@
-class Actions::Backup < Action
+class Actions::Backup < Actions::Base
   def match?
     return false unless warrior.feel(:backward).empty?
     warrior.sense_archer? && warrior.dangerously_damaged? || !warrior.sensed_wall?

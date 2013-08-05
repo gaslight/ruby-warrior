@@ -1,4 +1,4 @@
-class Actions::Rest < Action
+class Actions::Rest < Actions::Base
   def match?
     return false if fully_healed?
     return false if warrior.sense_archer?

@@ -1,4 +1,4 @@
-class Actions::Shoot < Action
+class Actions::Shoot < Actions::Base
   def match?
     @backward = warrior.sense_enemy?(:backward)
     @forward = warrior.sense_enemy?(:forward)

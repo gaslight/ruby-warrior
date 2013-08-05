@@ -1,4 +1,4 @@
-class Actions::RescueCaptive < Action
+class Actions::RescueCaptive < Actions::Base
   def match?
     @backward = warrior.feel(:backward).captive?
     @forward = warrior.feel.captive?

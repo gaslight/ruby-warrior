@@ -1,4 +1,4 @@
-class Actions::Explore < Action
+class Actions::Explore < Actions::Base
 
   def match?
     warrior.feel.empty?
